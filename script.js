@@ -23,6 +23,8 @@ btnProcurar.addEventListener('click', async () => {
         catch(error) {
             if (cidadeInput.value === ""){
             erroCidade.innerHTML = "Digite uma Cidade";
+            temperatura.innerText = "";
+            imagem.src = "";
         }else {
             console.error('Algo deu errado:', error);
             erroCidade.innerHTML = "Cidade Não Encontrada, verifique a escrita da Cidade";
