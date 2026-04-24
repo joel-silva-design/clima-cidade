@@ -12,12 +12,13 @@ btnProcurar.addEventListener('click', async () => {
 
     let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(cidade)}&appid=cf0c3c8af20137c73fc7a25961a89be3&units=metric&lang=pt_br`)
         let data = await response.json();
-            console.log('Resposra recebida:', data); 
+            console.log('Resposta recebida:', data); 
             console.log('Dados processados:', data);
             console.log('longitude:', data.coord.lon, 'latitude:', data.coord.lat);
             temperatura.innerText =`${data.main.temp}ºC`
             let icon = data.weather[0].icon;
             imagem.setAttribute('src', `http://openweathermap.org/img/wn/${icon}@2x.png`);
+            erroCidade.innerHTML = "";
     }
         
         catch(error) {
